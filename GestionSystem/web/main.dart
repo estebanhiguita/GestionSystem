@@ -1,31 +1,39 @@
-// Copyright (c) 2015, <your name>. All rights reserved. Use of this source code
+// Copyright (c) 2015, <ARISTA DEV>. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:html';
-
-import 'package:GestionSystem/nav_menu.dart';
 import 'package:GestionSystem/reverser.dart';
 import 'package:route_hierarchical/client.dart';
+import 'package:swiper/swiper.dart';
 
 void main() {
-  initNavMenu();
-  initReverser();
-
-  // Webapps need routing to listen for changes to the URL.
-  var router = new Router();
-  router.root
-    ..addRoute(name: 'about', path: '/about', enter: showAbout)
-    ..addRoute(name: 'home', defaultRoute: true, path: '/', enter: showHome);
-  router.listen();
+    // Initialize the Swiper.
+    Swiper swiper = new Swiper(querySelector('.swiper'), speed: 600);
+    
+    // Set up method calls for button clicks.
+    ButtonElement prevButton = querySelector('#previous-button')
+       ..onClick.listen((_) => swiper.prev());
+    ButtonElement nextButton = querySelector('#next-button')
+       ..onClick.listen((_) => swiper.next());
+    
+    InputElement moveInput = querySelector('#move-input');
+    ButtonElement moveButton = querySelector('#move-button')..onClick.listen((_) {
+     int index = int.parse(moveInput.value, onError: (txt) => 0);
+     moveInput.value = index.toString();
+     swiper.moveToIndex(index);
+    });
+    
+    // Write events to TextArea.
+    TextAreaElement events = querySelector('#events');
+    swiper.onPageChange.listen((index) {
+     append(events, 'PageChange Event: index=${index}\n');
+    });
+    swiper.onPageTransitionEnd.listen((index) {
+     append(events, 'TransitionEnd Event: index=${index}\n');
+    });
 }
 
-void showAbout(RouteEvent e) {
-  // Extremely simple and non-scalable way to show different views.
-  querySelector('#home').style.display = 'none';
-  querySelector('#about').style.display = '';
-}
-
-void showHome(RouteEvent e) {
-  querySelector('#home').style.display = '';
-  querySelector('#about').style.display = 'none';
+void append(TextAreaElement textArea, String text) {
+  textArea.appendText(text);
+  textArea.scrollTop = textArea.scrollHeight;
 }

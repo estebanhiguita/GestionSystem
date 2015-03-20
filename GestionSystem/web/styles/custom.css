@@ -160,9 +160,68 @@ a:hover{
         max: 200px;
         height: 200px;
       }
+      
+/* Inicio css swiper */
+.swiper {
+  overflow: hidden;
+  position: relative;
+  visibility: hidden; /* Hide until layout is ready. */
+  cursor: url(../packages/dnd/cursor/openhand.cur), move; /* Cursor for IE. */
+  cursor: url(../packages/dnd/cursor/openhand.cur) 7 5, move; /* Cursor for FF and Chrome (setting midpoint). */
+}
+
+.page-container {
+  position: relative;
+  height: 100%;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Show other curser during drag. */
+.swiper-dragging, .swiper-drag-occurring {
+  cursor: url(../packages/dnd/cursor/closedhand.cur), move; /* Cursor for IE. */
+  cursor: url(../packages/dnd/cursor/closedhand.cur) 7 5, move; /* Cursor for FF and Chrome (setting midpoint). */
+}
+
+
+/* Page Styling. */
+.page img {
+  max-width: 100%;
+  height: auto;
+}
+.form-control {
+  display: inline-block;
+  width: auto;
+}
+.page1 {
+  background-color: #00A0B0;
+}
+
+.page2 {
+  background-color: #6A4A3C;
+}
+
+.page3 {
+  background-color: #CC333F;
+}
+
+.page4 {
+  background-color: #EB6841;
+}
+
+.page5 {
+  background-color: #EDC951;
+}/* FIN css swiper */
+      
 
 
 
+/* inicio css pantalla max-width 800px */
 
 @media only screen and (max-width: 800px) {
     .jumbo{

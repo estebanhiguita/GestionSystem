@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="styles/foundation.css" />
     <link rel="stylesheet" href="styles/custom.css" />
     <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
+    <link rel="stylesheet" href="../packages/bootstrap_for_pub/3.1.0/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/custom.css">
+    <script async type="application/dart" src="main.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
     <script src="js/vendor/modernizr.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
@@ -82,59 +86,66 @@
             </section>
         </nav>
     </div>
-<!--     <section class="jumbo"> -->
-<!--         <div class="row"> -->
-<!--             <div class="large-12 columns"> -->
-<!--                 <h1>We Love Great Design</h1> -->
-<!--                 <p class="text-center"> -->
-<!--                     <a href="http://epickwebdesign.com" class="medium button">Simple Button</a> -->
-<!--                 </p> -->
-
-<!--             </div> -->
-<!--         </div> -->
-<!--     </section> -->
-
-<!--     <div class="row"> -->
-<!--       <div class="large-12 hide-for-small"> -->
-    
-<!--         <div id="featured" data-orbit> -->
-<!--             <img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image"> -->
-<!--             <img src="http://placehold.it/1200x500&text=Slide Image 2" alt="slide image"> -->
-<!--             <img src="http://placehold.it/1200x500&text=Slide Image 3" alt="slide image"> -->
-<!--         </div> -->
-    
-<!--      </div> -->
-<!--     </div> -->
-<!--     <hr> -->
-<!--     <br> -->
-<!--     <hr> -->
-<!--     <br> -->
-<!-- Otro test -->
 <section class="jumbo"> 
-    <div class="row"> 
-     <div class="large-12 columns"> 
-        <ul class="example-orbit" data-orbit>
-          <li>
-            <img src="img/banner/01.jpg" alt="slide image">
-            <div class="orbit-caption">
-              Caption One.
+     <!------------------------- Swiper code. ------------------------->
+    <div class="row">
+        <div class="small-11 small-centered columns">
+            <div class="swiper">
+              <div class="page-container">
+                <div class="page">
+                  <img src="img/banner/01.jpg" alt="img">
+                </div>
+                <div class="page">
+                  <img src="img/banner/02.jpg" alt="img">
+                </div>
+                <div class="page">
+                  <img src="img/banner/03.jpg" alt="img">
+                </div>
+              </div>
             </div>
-          </li>
-          <li class="active">
-            <img src="img/banner/02.jpg" alt="slide image">
-            <div class="orbit-caption">
-              Caption Two.
-            </div>
-          </li>
-          <li>
-            <img src="img/banner/03.jpg" alt="slide image">
-            <div class="orbit-caption">
-              Caption Three.
-            </div>
-          </li>
-        </ul>
-     </div>
+        </div>
     </div>
+    <!--------------------- End of Swiper code. --------------------->
+    <!------------------------- Swiper code. -------------------------
+    <div class="swiper">
+      <div class="page-container">
+        <div class="page page1">
+          <p>0</p>
+        </div>
+        <div class="page page2">
+          <p>1</p>
+        </div>
+        <div class="page page3">
+          <p>2</p>
+        </div>
+        <div class="page page4">
+          <p>3</p>
+        </div>
+        <div class="page page5">
+          <p>4</p>
+        </div>
+      </div>
+    </div>
+    <!--------------------- End of Swiper code. -------------------
+    
+
+    <h4>Methods</h4>
+    <p>
+      <button id="previous-button" class="btn btn-default">&larr; Previous</button>
+      <button id="next-button" class="btn btn-default">Next &rarr;</button>
+    </p>
+    <form class="form-inline">
+      <button id="move-button" class="btn btn-default" type="button">MoveToIndex</button>
+      <input id="move-input" class="form-control" type="number" value="2" />
+    </form>
+    
+    <h4>Events</h4>
+    <textarea readonly id="events" class="form-control" rows="10" cols="60"></textarea>
+    <p><em>
+      Note: There are more events than those demonstrated here, like 
+      <code>onDragStart</code>, <code>onDrag</code>, <code>onDragEnd</code>.
+    </em></p>
+    -->
 </section>
     
         <section id="portfolio">
