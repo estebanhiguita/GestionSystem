@@ -7,7 +7,7 @@ class FileServices
     @app.DefaultRoute(methods: const[app.POST], allowMultipartRequest: true)
     @Private()
     @Encode()
-    Future<FileDb> NewOrUpdate (@app.Body(app.FORM) Map form, 
+    Future<FileDb> New (@app.Body(app.FORM) Map form, 
                                 @Decode(fromQueryParams: true) FileDb queryMetadata,
                                 {String id, String ownerId}) async
     {
@@ -112,10 +112,9 @@ class FileServices
     @Encode()
     Future<FileDb> Update (String id, @app.Body(app.FORM) Map form, {String ownerId}) async
     {
-        
         FileDb metadata = await GetMetadata(id);
         Ref obj = await Delete (id);
-        FileDb fileDb = await NewOrUpdate(form, metadata, id: id, ownerId: ownerId);
+        FileDb fileDb = await New(form, metadata, id: id, ownerId: ownerId);
         
         return fileDb;
     }

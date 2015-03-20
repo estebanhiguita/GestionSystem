@@ -8,8 +8,7 @@ import 'dart:convert';
 part 'models/user.dart';
 part 'models/file.dart';
 
-
-const int tipoBuild = TipoBuild.deploy;
+const int tipoBuild = TipoBuild.desarrollo;
 
 int get port => 9090;
 

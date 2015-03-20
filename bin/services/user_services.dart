@@ -10,9 +10,10 @@ class UserServives extends AristaService<User>
     @app.DefaultRoute (methods: const [app.POST])
     Future<User> NewOrLogin (@Decode() User user) async
     {   
+        
         try
         {
-            return await Find(null, user.email, null, null);
+            return await Find (null, user.email, null, null);
         }
         catch (e){}
         

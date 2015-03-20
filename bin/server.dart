@@ -15,7 +15,7 @@ import 'dart:async';
 
 main() async
 {
-    var con = "mongodb://${partialDBHost}/test";
+    var con = "mongodb://${partialDBHost}/gs";
     
     print (con);
     
@@ -24,6 +24,7 @@ main() async
     app.addPlugin(getMapperPlugin(dbManager));
     app.addPlugin(AuthenticationPlugin);
     app.addPlugin(ErrorCatchPlugin);
+    app.addPlugin(PrintHeadersPlugin);
     
     app.setShelfHandler (createStaticHandler
     (
