@@ -23,16 +23,12 @@ import 'utils/utils.dart';
 
 part 'services/core/arista_service.dart';
 part 'services/user_services.dart';
-part 'services/evento_services.dart';
-part 'services/vista_services.dart';
 part 'services/general_services.dart';
 part 'services/file_services.dart';
-part 'services/objeto_unity_services.dart';
-part 'services/local_target_services.dart';
 part 'services/test_services.dart';
-part 'services/cloud_target_services.dart';
-part 'services/vuforia_services.dart';
 part 'utils/authorization.dart';
+
+
 
 
 QueryMap NewQueryMap () => new QueryMap(new Map());
@@ -140,37 +136,6 @@ Future<dynamic> streamedResponseToObject (Type type, http.StreamedResponse resp)
     return decodeJson(json, type);
 }
 
-Function ifDidntFail (Function f)
-{
-    return (resp)
-    {
-        if (resp is Resp && resp.success == false)
-            return resp;
-        else
-            return f (resp);
-    };
-}
-
-Function ifNotNull (String failMessage, dynamic f (dynamic))
-{
-    return (Object obj)
-    {
-        if (obj == null)
-            return new Resp()
-                ..error = failMessage;
-        
-        return f (obj);
-    };
-}
-
-ModifierBuilder getRefModifierBuilder (Ref obj, [MongoDb dbConn])
-{
-    return getModifierBuilder
-    (
-        obj..error = null,
-        dbConn
-    );
-}
 
 ModifierBuilder getModifierBuilder (Object obj, [MongoDb dbConn])
 {

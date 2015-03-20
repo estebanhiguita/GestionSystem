@@ -3,13 +3,13 @@
 
 import 'dart:html';
 
-import 'package:GestionSystem/nav_menu.dart';
-import 'package:GestionSystem/reverser.dart';
+//import 'package:GestionSystem/nav_menu.dart';
+//import 'package:GestionSystem/reverser.dart';
 import 'package:route_hierarchical/client.dart';
 
 void main() {
-  initNavMenu();
-  initReverser();
+//  initNavMenu();
+//  initReverser();
 
   // Webapps need routing to listen for changes to the URL.
   var router = new Router();

@@ -5,6 +5,9 @@ import 'package:redstone_mapper_mongo/metadata.dart';
 //import 'package:redstone/query_map.dart';
 import 'dart:convert';
 
+part 'models/user.dart';
+part 'models/file.dart';
+
 
 const int tipoBuild = TipoBuild.deploy;
 
