@@ -5,23 +5,31 @@ part of aristadart.server;
 @Encode()
 class UserServives extends AristaService<User>
 {
-    UserServives () : super (Col.user);
+    UserServives (MongoService mongoService) : super (Col.user, mongoService);
     
-    @app.DefaultRoute (methods: const [app.POST])
+    @app.Route ('/googleLogin', methods: const [app.POST])
+    Future<User> GoogleLogin (@Decode() JsonAccessCredentials credentials,
+                              @Inject() GoogleServices googleServices,
+                              @app.Attr() MongoDb dbConn) async
+    {
+        User user = await googleServices.GetUser(credentials);
+        return NewOrLogin(user);
+    }
+    
+    
     Future<User> NewOrLogin (@Decode() User user) async
     {   
-        
         try
         {
-            return await Find (null, user.email, null, null);
+            return await Find(null, user.email, null, null);
         }
         catch (e){}
         
-        if (nullOrEmpty(user.email) ||
-            nullOrEmpty(user.nombre) ||
-            nullOrEmpty(user.apellido))
+        if (nullOrEmpty(user.email) || nullOrEmpty(user.nombre) || nullOrEmpty(user.apellido))
+        {
             throw new app.ErrorResponse (400, "Error Registrando: nombre: ${user.nombre}," +
                                  "apellido: ${user.apellido}, email: ${user.email}");
+        }
         
         ProtectedUser newUser = Cast (ProtectedUser, user)
                         ..id = newId()
@@ -32,6 +40,7 @@ class UserServives extends AristaService<User>
         ( 
             newUser
         );
+        
           
         return Cast(User, newUser);
     }
@@ -48,7 +57,6 @@ class UserServives extends AristaService<User>
               
         return Get ();
     }
-    
     
     @app.Route ('/:id', methods: const [app.GET])
     @Private()
@@ -68,7 +76,7 @@ class UserServives extends AristaService<User>
     @Private()
     Future<BoolResp> isAdmin () async
     {
-        ProtectedUser user = await db.findOne
+        ProtectedUser user = await mongoDb.findOne
         (
             Col.user,
             ProtectedUser,
@@ -120,6 +128,32 @@ class UserServives extends AristaService<User>
         userId = id;
         
         return Update(delta);
+    }
+}
+
+class GoogleServices
+{
+    auth.AuthClient GetUser (auth.AccessCredentials credentials) async
+    {
+        var baseClient = new http.Client();
+        var authClient = auth.authenticatedClient(baseClient, credentials);
+        
+        var oauthApi = new oauth.Oauth2Api (authClient);
+        
+        oauth.Userinfoplus info = await oauthApi.userinfo.get();
+        
+        if (info == null)
+            throw new Exception("Fallo login con Google");
+        
+        User googleUser = new User()
+            ..email = info.email
+            ..nombre = info.name
+            ..apellido = info.familyName;
+        
+        baseClient.close();
+        authClient.close();
+        
+        return googleUser;
     }
 }
 

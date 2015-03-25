@@ -5,10 +5,7 @@ part of aristadart.server;
 cookie ()
 {
     var cookie = app.request.headers['cookie'];
-    
-    app.response = app.response.change(headers: {'set-cookie':'ID=2; Path=/; HttpOnly'});
-    
-    return new shelf.Response.ok("chao", headers: app.response.headers);
+    return new shelf.Response.ok (cookie, headers: {'set-cookie':'ID=2; Path=/; HttpOnly'});
 }
 
 class PrintHeaders

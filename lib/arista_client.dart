@@ -12,6 +12,7 @@ import "package:googleapis_auth/auth_browser.dart" as auth;
 import 'package:googleapis/oauth2/v2.dart' as oauth;
 
 //Components
+part 'components/views/login/login.dart';
 part 'components/main_controller.dart';
 
 //Widgets
