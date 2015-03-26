@@ -7,6 +7,11 @@ import 'dart:convert';
 import "package:googleapis_auth/auth.dart" as auth;
 
 part 'models/user.dart';
+part 'models/producto.dart';
+part 'models/sitio.dart';
+part 'models/categoria.dart';
+part 'models/noticia.dart';
+part 'models/imagen_slider.dart';
 part 'models/file.dart';
 part 'models/json_access_credentials.dart';
 
