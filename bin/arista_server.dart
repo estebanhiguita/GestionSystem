@@ -25,6 +25,7 @@ import 'utils/utils.dart';
 
 part 'services/core/arista_service.dart';
 part 'services/user_services.dart';
+part 'services/noticia_services.dart';
 part 'services/general_services.dart';
 part 'services/file_services.dart';
 part 'services/test_services.dart';

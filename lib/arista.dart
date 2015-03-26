@@ -119,6 +119,7 @@ abstract class Col
     static const String objetoUnity = 'objetoUnity';
     static const String localTarget = 'localTarget';
     static const String file = "file";
+    static const String noticia = "noticia";
 }
 
 abstract class ErrCode

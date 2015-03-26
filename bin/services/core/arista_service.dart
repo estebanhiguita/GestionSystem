@@ -3,7 +3,6 @@ part of aristadart.server;
 
 class AristaService<T extends Ref> extends MongoDbService<T>
 {
-
     AristaService (String collectionName, MongoService mongoService) : super.fromConnection(mongoService, collectionName);
     
     Future<T> NewGeneric (T obj) async
