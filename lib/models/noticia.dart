@@ -1,8 +1,10 @@
 part of aristadart.general;
 
-class Noticia
+class Noticia extends Ref
 {
-    FileDb imagen;
-    String link; 
+    @Field() String titulo;
+    @Field() String texto;
+    @Field() FileDb imagen;
+    @Field() String link; 
 }
 

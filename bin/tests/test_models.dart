@@ -22,6 +22,29 @@ testModels ()
         test("Decoding", (){});
     });
     
+    group ("User Model Tests", ()
+    {
+        Noticia noticia;
+        
+        setUp((){
+            noticia = new Noticia()
+                ..titulo = "Titulo"
+                ..texto = "Texto"
+                ..id = "1";
+            
+        });
+        tearDown((){});
+        
+        test("Encoding", (){
+            Noticia noticiaT = Cast (Noticia, noticia);
+            
+            expect (noticia.titulo, noticiaT.titulo);
+            expect (noticia.texto, noticiaT.texto);
+            expect (noticia.id, noticiaT.id);
+        });
+        test("Decoding", (){});
+    });
+    
     group ("Json Access Token Model Tests", ()
     {
         var _json = encode(_token);;

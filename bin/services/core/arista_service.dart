@@ -87,7 +87,6 @@ class MongoService implements MongoDb
   @override
   Future findOne(collection, Type type, [selector]) => mongoDb.findOne(collection, type, selector);
 
-  // TODO: implement innerConn
   @override
   Db get innerConn => mongoDb.innerConn;
 
