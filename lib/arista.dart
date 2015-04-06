@@ -159,20 +159,17 @@ Map ObjectToMap (dynamic obj)
 }
 
 Map addOrSet (Map headers, Map additions)
-{
-    
+{   
     if (headers != null)
         headers.addAll (additions);
     else
         headers = additions;
-    
     
     return headers;
 }
 
 Map maybeAdd (Map map, String field, Object value)
 {
-    
     if (value != null)
         map [field] = value;
     
