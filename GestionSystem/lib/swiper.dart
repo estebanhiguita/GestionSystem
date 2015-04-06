@@ -2,8 +2,8 @@ library swiper;
 
 import 'dart:html';
 import 'dart:async';
-import 'package:logging/logging.dart';
-import 'package:dnd/dnd.dart';
+//import 'package:logging/logging.dart';
+//import 'package:dnd/dnd.dart';
 
 final _log = new Logger('swiper');
 

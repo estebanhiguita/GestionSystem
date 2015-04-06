@@ -14,22 +14,6 @@ import 'package:GestionSystem/arista_client.dart';
 @MirrorsUsed(override: '*')
 import 'dart:mirrors';
 
-class MyAppModule extends Module
-{
-    MyAppModule()
-    {
-        //Views
-        
-        //Services
-        bind (ClientUserServices);
-        bind (ClientFileServices);
-        //Router
-        bind (RouteInitializerFn, toValue: recipeBookRouteInitializer);
-        bind (NgRoutingUsePushState, toValue: new NgRoutingUsePushState.value(false));
-    }
-}
-
-
 void main()
 {
     

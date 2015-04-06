@@ -16,7 +16,7 @@
 }
 
 .contain-to-grid{
-    background: rgba(234, 234, 234, 0.8);
+    background: #FFFFFF;
 }
 .top-bar{
     background: none;
@@ -31,9 +31,8 @@
 }
 
 .top-bar-section li:not(.has-form) a:hover:not(.button){
-    background: none;
-    text-decoration: underline;
-    color: #1a1a1a;
+    background: #ea421e;
+    color: #FFFFFF;
     
 }
 
@@ -179,6 +178,10 @@ a:hover{
   position: absolute;
   width: 100%;
   text-align: center;
+}
+
+caption-li p{
+    font-size: 0.45em;
 }
 
 
