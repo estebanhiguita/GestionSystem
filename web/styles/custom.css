@@ -183,6 +183,10 @@ a:hover{
 caption-li p{
     font-size: 0.45em;
 }
+caption-li-th p{
+    font-size: 0.9em;
+    text-align: center;
+}
 
 
 /* Show other curser during drag. */
