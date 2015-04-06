@@ -81,12 +81,20 @@
                     <li>
                         <a href="#top">INICIO</a>
                     </li>
-
-                    <li>
-                        <a href="#about">EMPRESA</a>
+                    <li class="has-dropdown">
+                        <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">EMPRESA</a>
+                        <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                          <li><a href="#">NOSOTROS</a></li>
+                          <li><a href="#">This is a link</a></li>
+                          <li><a href="#">another</a></li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="#portfolio">SOLUCIONES</a>
+                        <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">SOLUCIONES</a>
+                        <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+                          <li><a href="#">SERVICIOS</a></li>
+                          <li><a href="#">PRODUCTOS</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#portfolio">CASOS DE EXITO</a>
