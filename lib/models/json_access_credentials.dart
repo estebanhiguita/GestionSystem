@@ -3,15 +3,12 @@ part of aristadart.general;
 class JsonAccessCredentials implements auth.AccessCredentials
 {
     @Field()
-    @override
     JsonAccessToken accessToken;
 
     @Field()
-    @override
     String refreshToken;
 
     @Field()
-    @override
     List<String> scopes;
     
     JsonAccessCredentials ();
@@ -30,21 +27,17 @@ class JsonAccessToken implements auth.AccessToken
 {
     
     @Field()
-    @override
     String data;
 
     @Field()
-    @override
     DateTime expiry;
 
     @Field()
-    @override
     bool get hasExpired {
         return new DateTime.now().toUtc().isAfter(expiry);
     }
 
     @Field()
-    @override
     String type;
     
     JsonAccessToken ();

@@ -133,7 +133,7 @@ class UserServives extends AristaService<User>
 
 class GoogleServices
 {
-    auth.AuthClient GetUser (auth.AccessCredentials credentials) async
+    Future<User> GetUser (auth.AccessCredentials credentials) async
     {
         var baseClient = new http.Client();
         var authClient = auth.authenticatedClient(baseClient, credentials);

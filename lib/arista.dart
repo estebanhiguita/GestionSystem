@@ -7,6 +7,11 @@ import 'dart:convert';
 import "package:googleapis_auth/auth.dart" as auth;
 
 part 'models/user.dart';
+part 'models/producto.dart';
+part 'models/sitio.dart';
+part 'models/categoria.dart';
+part 'models/noticia.dart';
+part 'models/imagen_slider.dart';
 part 'models/file.dart';
 part 'models/json_access_credentials.dart';
 
@@ -18,9 +23,9 @@ String get staticFolder {
     switch (tipoBuild)
     {
         case TipoBuild.desarrollo:
-            return "../web";
+            return "web";
         case TipoBuild.jsTesting:
-            return "../build/web";
+            return "build/web";
         case TipoBuild.dockerTesting:
         case TipoBuild.deploy:
             return "build/web";
@@ -114,6 +119,7 @@ abstract class Col
     static const String objetoUnity = 'objetoUnity';
     static const String localTarget = 'localTarget';
     static const String file = "file";
+    static const String noticia = "noticia";
 }
 
 abstract class ErrCode
@@ -142,10 +148,10 @@ Function decodeTo (Type type)
     };
 }
 
-dynamic MapToObject (Type type, Map map)
+Function MapToObject (Type type) => (Map map)
 {
     return decodeJson(JSON.encode(map), type);
-}
+};
 
 Map ObjectToMap (dynamic obj)
 {
@@ -153,20 +159,17 @@ Map ObjectToMap (dynamic obj)
 }
 
 Map addOrSet (Map headers, Map additions)
-{
-    
+{   
     if (headers != null)
         headers.addAll (additions);
     else
         headers = additions;
-    
     
     return headers;
 }
 
 Map maybeAdd (Map map, String field, Object value)
 {
-    
     if (value != null)
         map [field] = value;
     

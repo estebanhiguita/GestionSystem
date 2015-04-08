@@ -3,7 +3,6 @@ part of aristadart.server;
 
 class AristaService<T extends Ref> extends MongoDbService<T>
 {
-
     AristaService (String collectionName, MongoService mongoService) : super.fromConnection(mongoService, collectionName);
     
     Future<T> NewGeneric (T obj) async
@@ -17,7 +16,7 @@ class AristaService<T extends Ref> extends MongoDbService<T>
     {
         T obj = await findOne
         (
-            where.id(StringToId(id)) 
+            where.id (StringToId(id))
         );
         
         if (obj == null)
@@ -75,36 +74,35 @@ class MongoService implements MongoDb
     
     @override
     DbCollection collection(String collectionName) => mongoDb.collection(collectionName);
-
-  @override
-  decode(data, Type type) => mongoDb.decode(data, type);
-
-  @override
-  encode(data) => mongoDb.encode(data);
-
-  @override
-  Future<List> find(collection, Type type, [selector]) => mongoDb.find(collection, type, selector);
-
-  @override
-  Future findOne(collection, Type type, [selector]) => mongoDb.findOne(collection, type, selector);
-
-  // TODO: implement innerConn
-  @override
-  Db get innerConn => mongoDb.innerConn;
-
-  @override
-  Future insert(collection, Object obj) => mongoDb.insert(collection, obj);
-
-  @override
-  Future insertAll(collection, List objs) => mongoDb.insertAll(collection, objs);
-
-  @override
-  Future remove(collection, selector) => mongoDb.remove(collection, selector);
-
-  @override
-  Future save(collection, Object obj) => mongoDb.save(collection, obj);
-
-  @override
-  Future update(collection, selector, Object obj, {bool override: true, bool upsert: false, bool multiUpdate: false})
-    => mongoDb.update(collection, selector, obj, override: override, upsert: upsert, multiUpdate: multiUpdate);
+    
+    @override
+    decode(data, Type type) => mongoDb.decode(data, type);
+    
+    @override
+    encode(data) => mongoDb.encode(data);
+    
+    @override
+    Future<List> find(collection, Type type, [selector]) => mongoDb.find(collection, type, selector);
+    
+    @override
+    Future findOne(collection, Type type, [selector]) => mongoDb.findOne(collection, type, selector);
+    
+    @override
+    Db get innerConn => mongoDb.innerConn;
+    
+    @override
+    Future insert(collection, Object obj) => mongoDb.insert(collection, obj);
+    
+    @override
+    Future insertAll(collection, List objs) => mongoDb.insertAll(collection, objs);
+    
+    @override
+    Future remove(collection, selector) => mongoDb.remove(collection, selector);
+    
+    @override
+    Future save(collection, Object obj) => mongoDb.save(collection, obj);
+    
+    @override
+    Future update(collection, selector, Object obj, {bool override: true, bool upsert: false, bool multiUpdate: false})
+        => mongoDb.update(collection, selector, obj, override: override, upsert: upsert, multiUpdate: multiUpdate);
 }

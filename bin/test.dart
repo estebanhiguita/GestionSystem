@@ -18,13 +18,16 @@ import 'package:redstone_mapper/mapper_factory.dart';
 import 'package:redstone_mapper/plugin.dart';
 
 part 'tests/test_user_services.dart';
+part 'tests/test_noticia_services.dart';
 part 'tests/test_models.dart';
 part 'tests/mocks.dart';
 
 
-main() 
+main()
 {
     bootstrapMapper();
-    userServicesTests();
-    testModels();
+    
+    userServicesTests ();
+    noticiaServicesTests ();
+    testModels ();
 }
