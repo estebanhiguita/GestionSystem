@@ -23,9 +23,9 @@ String get staticFolder {
     switch (tipoBuild)
     {
         case TipoBuild.desarrollo:
-            return "../web";
+            return "web";
         case TipoBuild.jsTesting:
-            return "../build/web";
+            return "build/web";
         case TipoBuild.dockerTesting:
         case TipoBuild.deploy:
             return "build/web";
@@ -148,10 +148,10 @@ Function decodeTo (Type type)
     };
 }
 
-dynamic MapToObject (Type type, Map map)
+Function MapToObject (Type type) => (Map map)
 {
     return decodeJson(JSON.encode(map), type);
-}
+};
 
 Map ObjectToMap (dynamic obj)
 {

@@ -27,7 +27,7 @@ main()
 {
     bootstrapMapper();
     
-    userServicesTests();
+    userServicesTests ();
     noticiaServicesTests ();
-    testModels();
+    testModels ();
 }

@@ -8,6 +8,7 @@ class NoticiaServices extends AristaService<Noticia>
     NoticiaServices (MongoService mongoDb) : super (Col.noticia, mongoDb);
     
     @app.DefaultRoute (methods: const [app.POST])
+    @Private(ADMIN)
     Future<Noticia> New () async
     {
         var noticia = new Noticia()
@@ -21,25 +22,34 @@ class NoticiaServices extends AristaService<Noticia>
     @app.Route ('/:id', methods: const [app.GET])
     Future<Noticia> Get (String id)
     {
-        throw new UnimplementedError();
+        return GetGeneric (id);
     }
     
     @app.Route ('/:id', methods: const [app.PUT])
-    Future<Noticia> Update (String id, Noticia delta)
+    @Private(ADMIN)
+    Future<Noticia> Update (String id, @Decode() Noticia delta) async
     {
-        throw new UnimplementedError();
+        await UpdateGeneric(id, delta);
+        
+        return Get(id);
     }
     
     @app.Route ('/:id', methods: const [app.DELETE])
+    @Private (ADMIN)
     Future<Ref> Delete (String id)
     {
-        throw new UnimplementedError();
+        return DeleteGeneric (id);
     }
-
+    
     @app.Route ('/ultimas', methods: const [app.GET])
-    Future<List<Noticia>> Ultimas ()
+    Future<List<Noticia>> Ultimas (@app.QueryParam() int n) async
     {
-        throw new UnimplementedError();
+        var cursor = mongoDb.innerConn.collection (collectionName).find()
+                ..limit = n;
+                
+        List<Map> list = await cursor.toList();
+        
+        return list.map ((Map map) => mongoDb.decode (map, Noticia)).toList();
     }
 }
 

@@ -7,6 +7,7 @@ noticiaServicesTests ()
     {
         User basicUser;
         var id = newId();
+        var n = 1;
         
         createBasicUser () async
         {
@@ -54,16 +55,16 @@ noticiaServicesTests ()
                   ..bind(FileServices)
                   ..bind(MongoService, toValue: mongoService));
           
-          app.setUp([#aristadart.server]);
+            app.setUp([#aristadart.server]);
         
-          //Crear mock request
-          MockRequest req = new MockRequest
-          (
-              '/noticia', method: app.POST
-          );
+            //Crear mock request
+            MockRequest req = new MockRequest
+            (
+                '/noticia', method: app.POST
+            );
       
-          //dispatch request
-          MockHttpResponse resp = await app.dispatch(req);
+            //dispatch request
+            MockHttpResponse resp = await app.dispatch(req);
           
             Noticia respNoticia = decodeJson(resp.mockContent, Noticia);
           
@@ -84,6 +85,23 @@ noticiaServicesTests ()
              
             expect (respNoticia.titulo, noticia.titulo);
             expect (respNoticia.texto, noticia.texto);
+        });
+        
+        test("Get", () async
+        {
+            var noticia = new Noticia()
+                ..titulo = "Titulo"
+                ..texto = "Texto"
+                ..id = newId();
+            
+            var mongoService = new MongoServiceMock()
+                ..when(callsTo('findOne')).thenReturn (new Future.value (noticia));
+            
+            var noticiaService = new NoticiaServices (mongoService);
+            
+            Noticia respNoticia = await noticiaService.Get (noticia.id);
+             
+            expect (noticia, respNoticia);
         });
     });
 }

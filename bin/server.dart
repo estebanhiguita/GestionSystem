@@ -93,6 +93,7 @@ main() async
     {
         print ("Admin found:");
         print (user.email);
+        print (user.id);
     }
     
     //List users = await dbConn.collection (Col.user).find().toList();
