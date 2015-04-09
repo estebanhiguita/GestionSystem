@@ -1,0 +1,34 @@
+.contain-to-grid{
+    background: #CA611F;
+}
+.top-bar{
+    background: none;
+}
+.top-bar .name h1 a {
+    color: white;
+}
+
+.top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
+    background: none;
+    
+}
+
+.top-bar-section li:not(.has-form) a:hover:not(.button){
+    background: #FFFFFF;
+    color: #ea421e;
+    
+}
+
+.top-bar-section ul li > a{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.active{
+    text-decoration: underline;
+    font-weight: bold !important;
+}
+
+.header{
+    background: #CA611F;
+}
