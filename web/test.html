@@ -8,30 +8,20 @@
     <link rel="stylesheet" href="styles/foundation.css" />
     <link rel="stylesheet" href="styles/custom.css" />
     <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
-    <link rel="stylesheet" href="../packages/bootstrap_for_pub/3.1.0/css/bootstrap.css">
     <link rel="stylesheet" href="styles/custom.css">
-<!--     <script async type="application/dart" src="main.dart"></script> -->
+    <link href="styles/micrositios/hover.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="styles/micrositios/micrositio.css">
     <script async src="packages/browser/dart.js"></script>
     <script src="js/vendor/modernizr.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-      function initialize() {
-        var mapCanvas = document.getElementById('map-canvas');
-        var mapOptions = {
-          center: new google.maps.LatLng(6.183409, -75.583435),
-          zoom: 15,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
     
 
 </head>
 
 <body>
-<!-- Logo y acceso rapido -->
+
+<!-- header-->
+<div class="header">
+    <!-- Logo y acceso rapido -->
     <div class="row">
         <div class="large-12 columns">
             <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 right">
@@ -54,8 +44,8 @@
             </ul>
                 <h1>
 
-    <!--                         <a href="#">Gestion System</a> -->
-        <img src="img/logo/Logo GS 200.png" alt="Gestion System" style="width:200px;">
+    <!--       <a href="#">Gestion System</a> -->
+        <img src="img/Temporal/iconoMS.png" alt="Gestion System" style="width:200px;">
     </h1>   
         </div>  
     </div>
@@ -87,7 +77,7 @@
                     <li class="has-dropdown">
                         <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">EMPRESA</a>
                         <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-                          <li><a href="#">NOSOTROS</a></li>
+                          <li><a href="#">DESARROLLO A LA MEDIDA</a></li>
                           <li><a href="#">This is a link</a></li>
                           <li><a href="#">another</a></li>
                         </ul>
@@ -95,133 +85,71 @@
                     <li>
                         <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">SOLUCIONES</a>
                         <ul id="drop2" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-                          <li><a href="#">SERVICIOS</a></li>
-                          <li><a href="#">PRODUCTOS</a></li>
+                          <li><a href="#">PEDIDOS WEB</a></li>
+                          <li><a href="#">WEB</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#portfolio">CASOS DE EXITO</a>
+                        <a href="#portfolio">SOCIAL MEDIA</a>
                     </li>
                     <li>
-                        <a href="#portfolio">GS CENTER</a>
-                    </li>
-                    <li>
-                        <a href="#contact">CONTÁCTENOS</a>
-                    </li>
                 </ul>
 
             </section>
         </nav>
     </div>
-<!--FIN NAV-BAR -->
+<!--FIN NAV-BAR -->  
 
-<!--NOTICIAS -->
-    <hr>
-    <ul class="example-orbit-content" data-orbit>
-        <li data-orbit-slide="headline-1">
-          <div class="text-center panel">
-            
-            <img src="img/Temporal/ndd.png">
-          
-          </div>
-        </li>
-        <li data-orbit-slide="headline-2">
-          <div class="text-center panel">
-            <h2>NOTICIA 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos animi, nobis illo. Repellendus atque dolorem, officia recusandae autem, laudantium consectetur, neque!</p>
-          </div>
-        </li>
-        <li data-orbit-slide="headline-3">
-          <div class="text-center panel">
-            <h2>NOTICIA 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos animi, nobis illo. Repellendus atque dolorem, officia recusandae autem, laudantium consectetur, neque!</p>
-          </div>
-        </li>
-  </ul>
+</div>
+<!--Fin Header-->
 
-<!--FIN NOTICIAS -->    
-
-<!--DESTACADOS -->    
-<!--     <section class="jumbo">  -->
-        <div id="left">
-            <ul style="width: 50em" class="example-orbit" data-orbit>
-              <li>
-                <img src="img/banner/01.jpg" alt="slide image">
-                <div class="orbit-caption">
-                  Caption One.
-                </div>
-              </li>
-              <li class="active">
-                <img src="img/banner/02.jpg" alt="slide image">
-                <div class="orbit-caption">
-                  Caption Two.
-                </div>
-              </li>
-              <li>
-                <img src="img/banner/03.jpg" alt="slide image">
-                <div class="orbit-caption">
-                  Caption Three.
-                </div>
-              </li>
-            </ul>
-        </div>
-        <div id="right">
-            <table>
-                <tr>
-                    <img style="width: 25em" src="img/banner/01.jpg" alt="slide image">
-                </tr>
-                <div>
-                    <br>
-                </div>
-               
-                <tr>
-                    <img style="width: 25em" src="img/banner/02.jpg" alt="slide image">
-                </tr>
-            </table>
-        </div>
-<!--     </section>  -->
-    <!------------------------- Swiper code. -------------------------
-    <div class="swiper">
-      <div class="page-container">
-        <div class="page page1">
-          <p>0</p>
-        </div>
-        <div class="page page2">
-          <p>1</p>
-        </div>
-        <div class="page page3">
-          <p>2</p>
-        </div>
-        <div class="page page4">
-          <p>3</p>
-        </div>
-        <div class="page page5">
-          <p>4</p>
-        </div>
+<!--DESTACADOS -->
+    <div class="row">
+      <div class="large-12 hide-for-small">
+    
+        <div id="featured" data-orbit>
+            <img src="http://placehold.it/1200x500&text=Slide Image 1" alt="slide image">
+            <img src="http://placehold.it/1200x500&text=Slide Image 2" alt="slide image">
+            <img src="http://placehold.it/1200x500&text=Slide Image 3" alt="slide image">
+          </div>
       </div>
     </div>
-    <!--------------------- End of Swiper code. -------------------
-    
-
-    <h4>Methods</h4>
-    <p>
-      <button id="previous-button" class="btn btn-default">&larr; Previous</button>
-      <button id="next-button" class="btn btn-default">Next &rarr;</button>
-    </p>
-    <form class="form-inline">
-      <button id="move-button" class="btn btn-default" type="button">MoveToIndex</button>
-      <input id="move-input" class="form-control" type="number" value="2" />
-    </form>
-    
-    <h4>Events</h4>
-    <textarea readonly id="events" class="form-control" rows="10" cols="60"></textarea>
-    <p><em>
-      Note: There are more events than those demonstrated here, like 
-      <code>onDragStart</code>, <code>onDrag</code>, <code>onDragEnd</code>.
-    </em></p>
-    -->
-    
 <!--FIN DESTACADOS -->
+
+<!--Info micrositio-->
+      <div class="row">
+        <div class="large-12 columns">
+          <h2>Tertiary Header</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-3 large-3 columns text-center">
+          <img src="http://placehold.it/300x250&text=[things]">
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dicta hic ut suscipit molestias numquam ab unde nulla repellendus incidunt, magnam reiciendis odio, dolorum labore asperiores odit assumenda ex delectus.</p>
+        </div>
+        <div class="medium-3 large-3 columns text-center">
+          <img src="http://placehold.it/300x250&text=[things]">
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dicta hic ut suscipit molestias numquam ab unde nulla repellendus incidunt, magnam reiciendis odio, dolorum labore asperiores odit assumenda ex delectus.</p>
+        </div>
+        <div class="medium-3 large-3 columns text-center">
+          <img src="http://placehold.it/300x250&text=[things]">
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dicta hic ut suscipit molestias numquam ab unde nulla repellendus incidunt, magnam reiciendis odio, dolorum labore asperiores odit assumenda ex delectus.</p>
+        </div>
+        <div class="medium-3 large-3 columns text-center">
+          <img src="http://placehold.it/300x250&text=[things]">
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate dicta hic ut suscipit molestias numquam ab unde nulla repellendus incidunt, magnam reiciendis odio, dolorum labore asperiores odit assumenda ex delectus.</p>
+        </div>
+      </div>
+<!--FIN Info micrositio-->
+<div class="view view-first">  
+     <img src="img/unidadesDeNegocio/OFIMATICA.png" />  
+     <div class="mask">  
+     <h2>OFIMATICA</h2>  
+     <p>Your Text</p>  
+         <a href="#" class="info">Read More</a>  
+     </div>  
+</div>  
+<!--Portafolio-->
     <hr>
     <br>
         <section id="portfolio">
@@ -229,49 +157,25 @@
                 <div class="large-8 small-centered columns">
                     <h2>Unidades de negocio</h2>
                     <h4 class="text-center">Soluciones pensadas para ti.</h4>
-                    <ul class="small-block-grid-8 medium-block-grid-6 large-block-grid-4">
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/OFIMATICA.png" alt="image3" />
+                    <ul class="small-block-grid-8 medium-block-grid-6 large-block-grid-3">
+                        <li data-orbit-link="headline-1">
+                            <img class="circle-icon button hvr-sweep-to-right" src="img/unidadesDeNegocio/OFIMATICA.png" alt="image3" />
                             <caption-li-th><p>OFIMATICA</p></caption-li-th>
                         </li>
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/GPS.png" alt="image3" />
+                        <li data-orbit-link="headline-2">
+                            <img class="circle-icon hvr-sweep-to-right" src="img/unidadesDeNegocio/GPS.png" alt="image3" />
                             <caption-li-th><p>GPS</p></caption-li-th>
                         </li>
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/PEDIDOS WEB.png" alt="image2" />
+                        <li data-orbit-link="headline-3">
+                            <img class="circle-icon hvr-sweep-to-right" src="img/unidadesDeNegocio/PEDIDOS WEB.png" alt="image2" />
                             <caption-li-th><p>VENTAS</p></caption-li-th>
     
                         </li>
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/CONSULTORIA.png" alt="image1" />
-                            <caption-li-th><p>CONSULTORIA</p></caption-li-th>
-                        </li>
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/INFORMATICA.png" alt="image2" />
-                            <caption-li-th><p>INFORMATICA</p></caption-li-th>
-    
-                        </li>
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/FORMACION.png" alt="image2" />
-                            <caption-li-th><p>FORMACIÓN</p></caption-li-th>
-    
-                        </li>
-                        <li>
-                            <img class="circle-icon th" src="img/unidadesDeNegocio/GS CENTER.png" alt="image1" />
-                            <caption-li-th><p>GS CENTER</p></caption-li-th>
-                        </li>
-                        
-<!--                         <li> -->
-<!--                             <img class="th" src="img/unidadesDeNegocio/VENTAS.png" alt="image3" /> -->
-<!--                         </li> -->
-<!--                         <li> -->
-<!--                             <img class="th" src="img/unidadesDeNegocio/WEB.png" alt="image3" /> -->
-<!--                         </li> -->
                     </ul>
                 </div>
             </div>
         </section>
+<!--Fin portafolio-->
     
     <br>
     <ul class="example-orbit-content" data-orbit>
@@ -297,40 +201,13 @@
           </div>
         </li>
     </ul>
-    
-<!-- Encuentranos -->
 
-<div id="contact">
-        <div class="row-a">
-        <div class="large-12 columns">
-    <div id="left">
-        <div class="small-4 columns"><h3>Contacto</h3>
-            <ul>
-                <li>
-                    <i class="fi-telephone"></i> (512)111-2222
-                </li>
-                <li>
-                    <i class="fi-home"></i> 1234 Lorem ipsum<br>Envigado, Antioquia</li>
-                <li>
-                    <i class="fi-mail"></i> info@yourdomain.com
-                </li>
-            </ul>
-        </div>
-        <div class="small-8 columns" id="map-canvas"></div>
-    </div>
-    <div id="right">
-        <iframe width="auto" height="210px" src="https://www.youtube.com/embed/EUoky1kDpsU" frameborder="0" allowfullscreen></iframe>
-    </div>
-    </div>
-    </div>
-</div>
-<!-- FIN Encuentranos -->
     <footer>
         <div class="row">
             <div class="large-12 columns">
                 <ul class="right small-block-grid-4 medium-block-grid-2 large-block-grid-6">
                     <li>
-                        <img class="th-icon th" src="img/iconsParteSuperior/NOTICIAS.PNG" alt="image1" />
+                        <img class="th-icon th " src="img/iconsParteSuperior/NOTICIAS.PNG" alt="image1" />
                     </li>
                     <li>
                         <img class="th-icon th" src="img/iconsParteSuperior/DESCARGAS.PNG" alt="image1" />
