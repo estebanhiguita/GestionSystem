@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="foundation-icons/foundation-icons.css" />
     <link rel="stylesheet" href="../packages/bootstrap_for_pub/3.1.0/css/bootstrap.css">
     <link rel="stylesheet" href="styles/custom.css">
-    <script async type="application/dart" src="main.dart"></script>
+<!--     <script async type="application/dart" src="main.dart"></script> -->
     <script async src="packages/browser/dart.js"></script>
     <script src="js/vendor/modernizr.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -276,29 +276,89 @@
         </section>
     
     <br>
-    <ul class="example-orbit-content" data-orbit>
-        <li data-orbit-slide="headline-1">
-          <div class="text-center panel">
-            <h2>ALIADOS 1</h2>
-            <h3>Subheadline</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos animi, nobis illo. Repellendus atque dolorem, officia recusandae autem, laudantium consectetur, neque!</p>
-          </div>
-        </li>
-        <li data-orbit-slide="headline-2">
-          <div class="text-center panel">
-            <h2>ALIADOS 2</h2>
-            <h3>Subheadline</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos animi, nobis illo. Repellendus atque dolorem, officia recusandae autem, laudantium consectetur, neque!</p>
-          </div>
-        </li>
-        <li data-orbit-slide="headline-3">
-          <div class="text-center panel">
-            <h2>ALIADOS 3</h2>
-            <h3>Subheadline</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos animi, nobis illo. Repellendus atque dolorem, officia recusandae autem, laudantium consectetur, neque!</p>
-          </div>
-        </li>
-    </ul>
+   <!--Aliados-->
+<div class="row">
+    <div class="large-12 columns">
+      <h2>Partners</h2>
+    </div>
+</div>
+<ul class="example-orbit-content" data-orbit  data-options="animation:slide;
+                  pause_on_hover:false;
+                  pause_on_click:false;
+                  next_on_click:false;
+                  swipe:false; ">
+    <li data-orbit-slide="headline-1">
+      <div class="row">
+            <div class="medium-2 large-2 columns text-center">
+                <a href="http://aristadev.com">
+                    <img src="http://placehold.it/300x250&text=[ARISTA WEB]">
+                </a>
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+      </div>
+    </li>
+   <li data-orbit-slide="headline-2">
+      <div class="row">
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+      </div>
+    </li>
+    <li data-orbit-slide="headline-3">
+      <div class="row">
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+            <div class="medium-2 large-2 columns text-center">
+              <img src="http://placehold.it/300x250&text=[things]">
+            </div>
+      </div>
+    </li>
+  </ul>
+      
+<!--FIN aliados-->
+
     
 <!-- Encuentranos -->
 
@@ -320,7 +380,7 @@
         </div>
         <div class="small-8 columns" id="map-canvas"></div>
     </div>
-    <div id="right">
+    <div id="right flex-video">
         <iframe width="auto" height="210px" src="https://www.youtube.com/embed/EUoky1kDpsU" frameborder="0" allowfullscreen></iframe>
     </div>
     </div>
@@ -397,7 +457,7 @@
     </script>
  
     <p id="text"></p>
-    <script type="application/dart" src="main.dart"></script>
+<!--     <script type="application/dart" src="main.dart"></script> -->
     <!-- for this next line to work, your pubspec.yaml file must have a dependency on 'browser' -->
     <script src="packages/browser/dart.js"></script>
   </body>
