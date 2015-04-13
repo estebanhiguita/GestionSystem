@@ -212,6 +212,32 @@ caption-li-th p{
     width: 12em;
 }
 
+fieldset {
+  border: 1px solid #DDDDDD  !important;
+  padding: 1.25rem  !important;
+  margin: 1.125rem 0  !important; 
+  background: #D5D5D5 !important;
+  width: auto;
+  height: auto;
+  box-shadow: 5px 5px 3px rgba(0,0,0,.07);
+  }
+fieldset legend
+{
+    font-weight: bold;
+    background: #FFFFFF;
+    padding: 0 0.1875rem;
+    margin: 0;
+    margin-left: -0.1875rem;
+}
+
+.seccion {
+  border: none;
+  width: auto;
+  height: auto;
+  box-shadow: 7px 7px 5px rgba(0,0,0,.07);
+}
+  
+
 
 /* Show other curser during drag. */
 .swiper-dragging, .swiper-drag-occurring {
